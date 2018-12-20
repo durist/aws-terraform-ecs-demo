@@ -1,15 +1,21 @@
 # aws-terraform-ecs-demo
 
-# To get ip of bastion:
-terraform output -module=bastion
+Simple demo of web container that serves https
 
-# Need to get IPs of ec2 nodes from console
+This needs a cert; see README in /certs directory.
 
-# Add key to ssh-agent
-ssh-add /path/to/private_key
+# SSHing to bastion/EC2 nodes
 
-# SSH to bastion host
-ssh ec2-user@<bastion-ip>
+Need to get IPs of ec2 nodes from console
 
-# SSH through bastion host to ec2 node
-ssh -o ProxyCommand='ssh -W %h:%p ec2-user@<bastion-ip>' ec2-user@<target-ip>
+## To get ip of bastion:
+`terraform output -module=bastion`
+
+## Add key to ssh-agent
+`ssh-add /path/to/private_key`
+
+## SSH to bastion host
+`ssh ec2-user@<bastion-ip>`
+
+## SSH through bastion host to ec2 node
+`ssh -o ProxyCommand='ssh -W %h:%p ec2-user@<bastion-ip>' ec2-user@<target-ip>`
