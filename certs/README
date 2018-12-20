@@ -1,0 +1,16 @@
+Directory for certs for ALB. Actual certs ignored by git.
+
+Terraform doesn't yet support import of certs to amazon ACM, though
+this feature is supposed to be coming soon in aws_acm_certificate.
+
+To import via AWS CLI do this:
+ aws acm import-certificate --certificate file://Certificate.pem
+                           --certificate-chain file://CertificateChain.pem
+                           --private-key file://PrivateKey.pem
+REF:
+https://docs.aws.amazon.com/acm/latest/userguide/import-certificate-api-cli.html
+
+
+To list certs (e.g. to get ARN):
+ aws acm list-certificates
+
