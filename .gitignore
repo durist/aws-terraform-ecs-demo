@@ -1,0 +1,7 @@
+.idea/
+.terraform/
+*.tfstate.backup
+
+# Ignore certs so we don't upload them to github
+service/certs/*.key
+service/certs/*.pem
