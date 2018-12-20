@@ -1,0 +1,9 @@
+* Logging
+** Set up cloudformation
+** Set EC2 hosts to log to cloudformation via user_data
+** Set up container to log to cloudformation
+
+* Test service that uses RDS/EFS
+** Add RDS instance
+** Add EFS instance, attach to container
+
