@@ -4,6 +4,11 @@ Simple demo of web container that serves https
 
 This needs a cert; see README in /certs directory.
 
+# To get address of service
+`terraform output -module=service`
+
+**alb_dns_name** will be hostname; note that the cert won't match.
+
 # SSHing to bastion/EC2 nodes
 
 Need to get IPs of ec2 nodes from console
