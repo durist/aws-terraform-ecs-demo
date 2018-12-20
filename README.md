@@ -11,7 +11,9 @@ This needs a cert; see README in /certs directory.
 
 # SSHing to bastion/EC2 nodes
 
-Need to get IPs of ec2 nodes from console
+Create an amazon key pair and add the key name to **key_name** in vars.tf.
+
+Need to get IPs of ec2 nodes from AWS console
 
 ## To get ip of bastion:
 `terraform output -module=bastion`
