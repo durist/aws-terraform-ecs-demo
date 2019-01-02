@@ -1,6 +1,5 @@
-terraform.tfstate
-.terraform/
-*.tfstate.backup
+terraform.tfstate*
+.terraform*
 
 # Ignore certs so we don't upload them to github
 certs/*.key
