@@ -1,9 +1,9 @@
 * Logging
-** Set up cloudformation
-** Set EC2 hosts to log to cloudformation via user_data
-** Set up container to log to cloudformation
+** Set up cloudwatch
+** Set EC2 hosts to log to cloudwatch via user_data
+** Set up container to log to cloudwatch
 
 * Test service that uses RDS/EFS
 ** Add RDS instance
-** Add EFS instance, attach to container
+** Make EFS instance name/mount variables; make creation conditional
 

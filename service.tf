@@ -12,11 +12,28 @@ module "service" {
   ecs_cluster_id = "${module.ecs_cluster.id}"
   ecs_cluster_name = "${module.ecs_cluster.name}"
   
-  #  docker_image = "npalm/docker-introduction"
-  # docker_image = "nginx"
   docker_image = "nginxdemos/hello"
   service_name = "test"
 
+  #
+  # EFS volume
+  #
+  volumes = [{
+    name      = "efs"
+    host_path = "/efs" # e.g /efs/my-service
+  }]
+  docker_mount_points = <<EOF
+    "mountPoints": [
+      {
+        "readOnly": null,
+        "containerPath": "/efs",
+        "sourceVolume": "efs"
+      }
+    ]
+  EOF
+  
+
+  
   // ALB specific settings
   ecs_service_role      = "${module.ecs_cluster.service_role_name}"
   enable_alb            = true

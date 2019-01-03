@@ -25,6 +25,9 @@ variable "aws_azs" {
     ]
   }
 }
+# FIXME need to use this in efs module, due to broken dependency resolution in v0.11
+variable "subnet_count" { default = 2 }
+
 
 variable "key_name" {
   default = "durist-dev"
