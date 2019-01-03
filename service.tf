@@ -19,15 +19,15 @@ module "service" {
   # EFS volume
   #
   volumes = [{
-    name      = "efs"
-    host_path = "/efs" # e.g /efs/my-service
+    name      = "${var.efs["docker_volume"]}"
+    host_path = "${var.efs["ecs_mountpoint"]}"
   }]
   docker_mount_points = <<EOF
     "mountPoints": [
       {
         "readOnly": null,
-        "containerPath": "/efs",
-        "sourceVolume": "efs"
+        "containerPath": "${var.efs["docker_mountpoint"]}",
+        "sourceVolume": "${var.efs["docker_volume"]}"
       }
     ]
   EOF

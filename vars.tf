@@ -59,4 +59,11 @@ variable "certificate_arn" {
   default = "arn:aws:acm:us-east-1:865407926015:certificate/e89882b7-888a-4a00-b9bc-c9df35403d92"
 }
 
+variable "efs" {
+  default = {
+    ecs_mountpoint = "/myvolefs"
+    docker_volume = "myvol"
+    docker_mountpoint = "/myvoldocker"
+  }
+}
 

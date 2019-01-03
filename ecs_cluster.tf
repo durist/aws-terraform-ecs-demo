@@ -26,7 +26,7 @@ data "template_cloudinit_config" "ecs-user-data" {
   #
   # FIXME what if we have multiples??? Possible interpolation issues; maybe we can loop
   part {
-    filename     = "efs.cfg"
+#    filename     = "efs.cfg"
     content_type = "${module.efs.amazon_linux_cloudinit_config_part["content_type"]}"
     content      = "${module.efs.amazon_linux_cloudinit_config_part["content"]}"
   }

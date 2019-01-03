@@ -4,6 +4,8 @@ module "efs" {
   environment = "${var.environment}"
   project = "${var.project}"
   tags = "${var.tags}"
+
+  mount_location = "${var.efs["ecs_mountpoint"]}"
   
   vpc_id = "${module.vpc.vpc_id}"
   subnet_ids = "${module.vpc.private_subnets}"
