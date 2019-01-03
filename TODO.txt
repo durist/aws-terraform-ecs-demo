@@ -5,5 +5,6 @@
 
 * Test service that uses RDS/EFS
 ** Add RDS instance
-** Make EFS instance name/mount variables; make creation conditional
 
+* Separate services into their own subdirectory (but how to handle EFS
+  vols, which need to be mounted on EC2?) 
